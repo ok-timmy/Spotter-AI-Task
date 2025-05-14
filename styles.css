@@ -4,13 +4,47 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  font-family: "Manrope", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
+}
+
+.skewed-bg {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    right: 0;
+    height: 80vh;
+    background: rgba(188, 221, 222, 0.5);
+    z-index: -1;
+
+     clip-path: polygon(
+        0 0, 
+        100% 40%,
+        100% 100%,
+        0 100% 
+    );
+}
+
+.logo-icon{
+  height: 28px;
+  width: 28px;
+}
+
+.logo-text{
+  height: 28px;
+  color: #000000;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  width: 140px;
 }
 
 /* Navbar styles */
@@ -32,11 +66,6 @@ body {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
 
 .mobile-menu-toggle {
   display: none;
@@ -64,7 +93,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #e74c3c;
+  color: #f84960;
 }
 
 .buttons-div {
@@ -76,15 +105,16 @@ body {
   border: none;
   font-size: 14px;
   background-color: transparent;
-  color: #e74c3c;
+  color: #f84960;
+  cursor: pointer;
 }
 
 .login-button:hover {
-  color: #cb2f1e;
+  color: #008080;
 }
 
 .contact-button {
-  background-color: #dd8808;
+  background-color: #f84960;
   color: white !important;
   padding: 10px 20px;
   border-radius: 4px;
@@ -96,13 +126,13 @@ body {
 }
 
 .contact-button:hover {
-  background-color: #b77005;
+  background-color: #008080;
 }
 
 .contact-sales-button {
-  border: #dd8808 1px solid;
+  border: #f84960 1px solid;
   border-radius: 4px;
-  color: #dd8808;
+  color: #f84960;
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 400;
@@ -111,10 +141,17 @@ body {
   cursor: pointer;
 }
 
+.contact-sales-button:hover {
+  border-color: #008080;
+  color: #008080;
+}
+
+
+
 /* Hero section */
 .hero {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 20px;
@@ -133,9 +170,9 @@ body {
 }
 
 .transparent {
-  color: #a0a0a0;
+  color: #008080;
   font-size: 12px;
-  border: 1px #a0a0a0 solid;
+  border: 1px #bcddde solid;
   width: fit-content;
   padding: 2px 4px;
   border-radius: 4px;
@@ -153,7 +190,7 @@ body {
 
 .hero h1 .accurate-text {
   font-weight: 600;
-  color: #e74c3c;
+  color: #f84960;
 }
 
 .hero h2 {
@@ -174,7 +211,9 @@ body {
   padding: 8px 12px;
   font-size: 12px;
   border-radius: 4px;
-  border: 1px solid #a0a0a0;
+  border: 1px solid #008080;
+  background-color: #bcddde;
+  color: black;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -246,13 +285,13 @@ svg {
 
 .line-1 {
   fill: none;
-  stroke: #e74c3c;
+  stroke: #f84960;
   stroke-width: 1.5;
 }
 
 .line-2 {
   fill: none;
-  stroke: #3498db;
+  stroke: #008080;
   stroke-width: 1.2;
 }
 
@@ -324,7 +363,7 @@ svg {
 }
 
 .icon {
-  color: #e74c3c;
+  color: #f84960;
 }
 
 .feature h3,
