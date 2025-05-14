@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
   font-family: "Manrope", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -37,10 +38,20 @@ body {
   color: #1a1a1a;
 }
 
+.mobile-menu-toggle {
+  display: none;
+}
+
 .nav-menu {
   display: flex;
+  gap: 64px;
+}
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
   list-style: none;
-  gap: 25px;
+  gap: 24px;
 }
 
 .nav-link {
@@ -53,7 +64,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #0066ff;
+  color: #e74c3c;
 }
 
 .buttons-div {
@@ -65,11 +76,11 @@ body {
   border: none;
   font-size: 14px;
   background-color: transparent;
-  color: #dd8808;
+  color: #e74c3c;
 }
 
 .login-button:hover {
-  color: #b77005;
+  color: #cb2f1e;
 }
 
 .contact-button {
@@ -111,6 +122,7 @@ body {
 }
 
 .hero-left {
+  flex: 1.25;
   background-color: white;
   border-radius: 8px;
   padding: 25px;
@@ -118,42 +130,135 @@ body {
   display: flex;
   flex-direction: column;
   text-align: start;
-  width: 1.5fr;
 }
 
-.transparent{
-    color: #a0a0a0;
-    font-size: 10px;
-    border: 1px #a0a0a0 solid;
-    width: fit-content;
-    padding: 2px 4px;
-    border-radius: 4px;
-    margin-bottom: 16px;
+.transparent {
+  color: #a0a0a0;
+  font-size: 12px;
+  border: 1px #a0a0a0 solid;
+  width: fit-content;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 .hero h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #1a1a1a;
   line-height: 40px;
   font-weight: 500;
 }
 
-.hero h1 span {
-    font-weight: 600;
-    color: #dd8808;
+.hero h1 .accurate-text {
+  font-weight: 600;
+  color: #e74c3c;
 }
 
 .hero h2 {
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   color: #4d4d4d;
+  max-width: 360px;
+}
+
+.hero h2 span {
+  font-weight: 600;
+}
+
+.learn-more {
+  cursor: pointer;
+  width: fit-content;
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid #a0a0a0;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.graph-container {
+  width: 100%;
+  max-width: 800px;
+  height: 200px;
+  margin: 40px auto;
+  position: relative;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.graph-labels {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(102, 102, 102, 0.5);
+}
+
+.y-axis-label {
+  position: absolute;
+  bottom: -60px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(102, 102, 102, 0.5);
+  text-transform: uppercase;
+}
+
+.x-axis-label {
+  position: absolute;
+  bottom: -60px;
+  right: 0px;
+  width: fit-content;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(102, 102, 102, 0.5);
+  text-transform: uppercase;
+}
+
+.day-markers {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(102, 102, 102, 0.5);
+}
+
+.day-marker {
+  text-align: center;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+  width: calc(100% + 20px);
+}
+
+.line-1 {
+  fill: none;
+  stroke: #e74c3c;
+  stroke-width: 1.5;
+}
+
+.line-2 {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 1.2;
 }
 
 /* Features section */
 .features {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -164,32 +269,173 @@ body {
 }
 
 .feature {
+  display: flex;
+  gap: 16px;
   background-color: white;
-  border-radius: 8px;
-  padding: 25px;
+  border-radius: 12px;
+  padding: 25px 80px 25px 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
-.feature h3 {
-  font-size: 1.2rem;
+.feature-2-wrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 300px;
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px 80px 25px 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.dots-wrapper {
+  position: absolute;
+  height: fit-content;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px 12px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(160, 160, 160, 0.2);
+  border-radius: 2px;
+}
+
+.feature-2 {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  height: fit-content;
+}
+
+.icon-wrapper {
+  width: fit-content;
+  height: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(171, 171, 171, 0.25);
+}
+
+.icon {
+  color: #e74c3c;
+}
+
+.feature h3,
+.feature-2-wrapper h3 {
+  font-size: 1rem;
+  font-weight: 500;
   margin-bottom: 10px;
-  color: #1a1a1a;
+  color: #000000;
 }
 
-.feature p {
+.feature p,
+.feature-2-wrapper p {
   color: #666;
+  font-size: 12px;
+  font-weight: 300;
 }
 
-/* Responsive adjustments */
+/* (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
-    gap: 15px;
+    padding: 15px;
   }
 
   .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding: 15px 0;
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu.active ul,
+  .nav-menu.active div {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 24px;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    flex-direction: column;
+    padding: 40px 16px;
+  }
+
+  .feature-2-wrapper {
+    height: 200px;
+  }
+
+  .dots-wrapper {
+    height: 100px;
+    overflow: hidden;
+  }
+}
+
+/* Small Devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    padding: 8px 0;
+  }
+
+  .nav-menu {
+    padding: 10px 0;
+  }
+
+  .x-axis-label,
+  .y-axis-label {
+    font-size: 10px;
+  }
+
+  .feature,
+  .feature-2-wrapper {
+    padding: 20px 20px 20px 20px;
+  }
+
+  .feature-2-wrapper {
+    height: 240px;
+  }
+
+  .dots-wrapper {
+    height: 100px;
+    overflow: hidden;
   }
 }
